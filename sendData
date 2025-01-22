@@ -1,0 +1,43 @@
+// Ustawienia API ThingSpeak
+const apiKey = "2AC5IBAN2478STVR"; // Wstaw swój klucz API z ThingSpeak
+const fieldName = "field2"; // Nazwa pola, do którego wysyłasz dane
+const serverURL = `https://api.thingspeak.com/update`;
+
+// Ścieżka do pliku przechowującego liczbę kliknięć
+const FILE_NAME = "click_counter.txt";
+const fm = FileManager.iCloud();
+const filePath = fm.joinPath(fm.documentsDirectory(), FILE_NAME);
+
+// Funkcja odczytująca liczbę kliknięć
+function getClickCount() {
+  if (fm.fileExists(filePath)) {
+    const content = fm.readString(filePath);
+    return parseInt(content) || 0;
+  }
+  return 0;
+}
+
+// Przykładowa zmienna do wysłania
+const dataToSend = getClickCount; // Wartość, którą chcesz wysłać (np. przechowywana w pliku)
+
+// Funkcja wysyłająca dane do ThingSpeak
+async function sendDataToThingSpeak(value) {
+  const url = `${serverURL}?api_key=${apiKey}&${fieldName}=${value}`;
+  const request = new Request(url);
+  
+  try {
+    const response = await request.loadString(); // Wysyłanie zapytania GET
+    console.log(`ThingSpeak Response: ${response}`);
+    return response;
+  } catch (error) {
+    console.error(`Error sending data to ThingSpeak: ${error}`);
+  }
+}
+
+// Wywołanie funkcji
+await sendDataToThingSpeak(dataToSend);
+
+// Zakończenie skryptu
+Script.complete();
+
+
