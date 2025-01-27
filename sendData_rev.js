@@ -1,7 +1,7 @@
 // Ustawienia API ThingSpeak
 const apiKey = "2AC5IBAN2478STVR"; // Wstaw swój klucz API z ThingSpeak
 const apiKeyR  = "DEVD9V4WDUHA203E"; //read key
-const fieldName = "field1"; // Nazwa pola, do którego wysyłasz dane
+const fieldName = "field2"; // Nazwa pola, do którego wysyłasz dane
 const fieldDifference = "field5"; // Nazwa pola do wysyłania różnicy
 const serverURL = `https://api.thingspeak.com`;
 
