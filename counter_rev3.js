@@ -11,9 +11,9 @@ const filePath = fm.joinPath(fm.documentsDirectory(), FILE_NAME);
 // Tablica napisów
 const messages = [
   "Jestem z Ciebie dumny ", "Kocham Cię Słonko", "Wiem że dasz radę!", "Wierzę w Ciebie!", "Wierzę w Twój sukces", "Czekam na Twoje białe oczka", "Dzięki Tobie życie jest lepsze", 
-  "Sprawiasz że mi się chce!", "It's beautiful sunset isn;t it?", "Czekam na Twój powrót z utęsknieniem!",
+  "Sprawiasz że mi się chce!", "It's beautiful sunset isn't it?", "Czekam na Twój powrót z utęsknieniem!",
   "Jestem zawsze gdybyś tego potrzebowała <3", "Budujesz mnie bardziej niż Ci się to wydaje!", "Dzięki Tobie wierzę w miłość", "Tak trzymaj, wiem że dasz radę!", "Dla Ciebie się nie poddam <3", 
-  "Twoja siła mnie inspiruje", "Każde Twoje małe zwycięztwo sprawia że jestem dumny", "Twój sukces jest dla mnie największym darem", "Zwycięzstwo jest blisko, czuję to <3", "Dziękuję, żenasze wspólne chwile są dla Ciebie tak cenne",
+  "Twoja siła mnie inspiruje", "Każde Twoje małe zwycięztwo sprawia że jestem dumny", "Twój sukces jest dla mnie największym darem", "Zwycięzstwo jest blisko, czuję to <3", "Dziękuję, że nasze wspólne chwile są dla Ciebie tak cenne",
   "Dziękuję, że dla Ciebie nasze wspólne chwile są tak cenne", "Jesteś dla mnie najważniejsza", "Twoja determinacja mnie zachwyca", "Jesteś moim Słodziakiem"
 ];
 
@@ -55,6 +55,7 @@ async function createWidget() {
   const randomMessage = getRandomMessage();
 
   let message = widget.addText(randomMessage);
+  widget.backgroundColor = new Color("#c31f20");
   widget.addSpacer();
   message.centerAlignText()
   message.font = Font.boldSystemFont(20);
