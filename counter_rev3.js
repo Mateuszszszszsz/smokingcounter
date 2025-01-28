@@ -54,12 +54,15 @@ async function createWidget() {
   const widget = new ListWidget();
   const randomMessage = getRandomMessage();
 
-  widget.addText(randomMessage);
+  let message = widget.addText(randomMessage);
   widget.addSpacer();
+  message.centerAlignText()
+  message.font = Font.boldSystemFont(20);
 
   const footer = widget.addText("Czekam na piątek i moją najsilniejszą!");
   footer.font = Font.footnote();
   footer.textOpacity = 0.7;
+  footer.centerAlignText();
 
   return widget;
 }
