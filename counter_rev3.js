@@ -10,9 +10,11 @@ const filePath = fm.joinPath(fm.documentsDirectory(), FILE_NAME);
 
 // Tablica napisów
 const messages = [
-  "napis1", "napis2", "napis3", "napis4", "napis5", "napis6", "napis7", "napis8", "napis9", "napis10",
-  "napis11", "napis12", "napis13", "napis14", "napis15", "napis16", "napis17", "napis18", "napis19", "napis20",
-  "napis21", "napis22", "napis23", "napis24", "napis25", "napis26", "napis27", "napis28", "napis29", "napis30"
+  "Jestem z Ciebie dumny ", "Kocham Cię Słonko", "Wiem że dasz radę!", "Wierzę w Ciebie!", "Wierzę w Twój sukces", "Czekam na Twoje białe oczka", "Dzięki Tobie życie jest lepsze", 
+  "Sprawiasz że mi się chce!", "It's beautiful sunset isn;t it?", "Czekam na Twój powrót z utęsknieniem!",
+  "Jestem zawsze gdybyś tego potrzebowała <3", "Budujesz mnie bardziej niż Ci się to wydaje!", "Dzięki Tobie wierzę w miłość", "Tak trzymaj, wiem że dasz radę!", "Dla Ciebie się nie poddam <3", 
+  "Twoja siła mnie inspiruje", "Każde Twoje małe zwycięztwo sprawia że jestem dumny", "Twój sukces jest dla mnie największym darem", "Zwycięzstwo jest blisko, czuję to <3", "Dziękuję, żenasze wspólne chwile są dla Ciebie tak cenne",
+  "Dziękuję, że dla Ciebie nasze wspólne chwile są tak cenne", "Jesteś dla mnie najważniejsza", "Twoja determinacja mnie zachwyca", "Jesteś moim Słodziakiem"
 ];
 
 // Funkcja odczytująca liczbę kliknięć
@@ -55,7 +57,7 @@ async function createWidget() {
   widget.addText(randomMessage);
   widget.addSpacer();
 
-  const footer = widget.addText("Losowy napis");
+  const footer = widget.addText("Czekam na piątek i moją najsilniejszą!");
   footer.font = Font.footnote();
   footer.textOpacity = 0.7;
 
